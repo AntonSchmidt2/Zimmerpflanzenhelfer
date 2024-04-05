@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Watering Logs</title>
+</head>
+<body>
+    <h1>Plant Watering Log</h1>
+    <ul>
+        {% for log in logs %}
+            <li>Plant: {{ log.plant_name }}, Watered at: {{ log.watered_at }}</li>
+        {% empty %}
+            <li>No logs found.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
