@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f60b3888-2bf5-46e9-8e64-98dc6d783d52" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/waterlog/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/waterlog/templates/waterlog/manual_log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/djangoProject/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/djangoProject/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/waterlog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/waterlog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/waterlog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/waterlog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Dockerfile" />
+        <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -35,11 +41,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "django.template.preview.state": "SHOW_EDITOR_AND_PREVIEW",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "feature/manual-log",
     "last_opened_file_path": "C:/Users/heewo/OneDrive/문서/Github/Zimmerpflanzenhelfer",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -55,6 +62,7 @@
       <recent name="C:\Users\schmi\PycharmProjects\djangoProject\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\heewo\OneDrive\문서\Github\Zimmerpflanzenhelfer\waterlog\templates\waterlog" />
       <recent name="C:\Users\schmi\PycharmProjects\djangoProject\waterlog\templates\waterlog" />
       <recent name="C:\Users\schmi\PycharmProjects\djangoProject\waterlog" />
     </key>
@@ -102,9 +110,33 @@
       <updated>1712300085371</updated>
       <workItem from="1712300110042" duration="2069000" />
     </task>
+    <task id="LOCAL-00001" summary="add redirect">
+      <option name="closed" value="true" />
+      <created>1712311660655</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1712311660656</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add redirect" />
+    <option name="LAST_COMMIT_MESSAGE" value="add redirect" />
   </component>
 </project>
