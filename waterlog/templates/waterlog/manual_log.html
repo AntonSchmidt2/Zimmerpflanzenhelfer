@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual log</title>
+</head>
+<body>
+    <h1>Plant Watering Log</h1>
+    <form action = "/waterlog/log-created/" method="POST">
+        {% csrf_token %}
+        <label for="plant-name">Choose your plant's name</label>
+        <select name = "plant-name" id = "plant-name" required>
+            {% for plant in plant_list %}
+            <option value="{{plant.plant_name}}">{{plant.plant_name}}</option>
+            {% endfor %}
+        </select>
+        <label for="watered-at">Watered at</label>
+        <input type="date" id = "watered-at" name = "watered-at">
+        <input type="submit" class="btn02" value="submit log"/>
+    </form>
+</body>
+</html>
