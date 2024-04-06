@@ -20,21 +20,35 @@ def show_logs(request):
 
 
 def log_page(request):
-    plant_list = WaterLog.objects.all()
+    # print only distinct plant names
+    plant_list = WaterLog.objects.values_list('plant_name', flat=True).distinct()
     context = {'plant_list': plant_list}
     return render(request, 'waterlog/manual_log.html', context)
 
 
 def add_manual_log(request):
     if request.method == 'POST':
+        action = request.POST.get('action')
         watering_info = dict(request.POST)
         del watering_info['csrfmiddlewaretoken']
         # 'plant-name': ['PlantName'], 'watered-at': ['2024-04-05']}
-        input = {i:j[0] for i, j in watering_info.items()}
+        log_input = {i:j[0] for i, j in watering_info.items()}
+        print(log_input)
         # {'plant-name': 'PlantName', 'watered-at': '2024-04-05'}
+        if action == 'log_existing':
+            # plant_info = WaterLog.objects.get(plant_name=input['plant-name'])
+            # plant_info.watered_at = input['watered-at']
+            name = log_input['plant-name']
+            watered = log_input['watered-at']
+        elif action == "log_new":
+            name = log_input['name']
+            watered = log_input['new_watered']
+
         try:
-            plant_info = WaterLog.objects.get(plant_name=input['plant-name'])
-            plant_info.watered_at = input['watered-at']
+            plant_info = WaterLog.objects.create(
+                plant_name=name,
+                watered_at=watered
+            )
             plant_info.save()
         except IntegrityError:
             pass
