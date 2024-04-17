@@ -6,8 +6,7 @@ class Plant(models.Model):
     species = models.CharField(max_length=100, blank=True, null=True)
     location = models.CharField(max_length=100, null=True)
     last_watered = models.DateField(auto_now_add=True, null=True)
-    watering_interval = models.IntegerField(help_text="Enter number of days between watering")
-
+    watering_interval = models.IntegerField(help_text="Enter number of days between watering", default=7)  # default set to 7 days
     def __str__(self):
         return self.name
 

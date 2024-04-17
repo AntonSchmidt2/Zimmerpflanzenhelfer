@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Manual log</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: green; }
+        form { margin-bottom: 20px; }
+        label { display: block; margin: 10px 0 5px; }
+        input, select, textarea { width: 200px; margin-bottom: 10px; padding: 8px; }
+        input[type=submit] { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        input[type=submit]:hover { background-color: #45a049; }
+        .navigation { background: #f0f0f0; padding: 10px 0; text-align: center; margin-bottom: 20px; }
+        .navigation a { text-decoration: none; color: #333; margin: 0 10px; }
+    </style>
 </head>
 <body>
     <h1>Plant Watering Log</h1>
+    <div class="navigation">
+        <a href="/">Home</a>
+        <a href="/waterlog/show_logs/">View Logs</a>
+    </div>
     <div>
         <!-- Form for logging watering to an existing plant -->
         <form action="/waterlog/log-created/" method="POST">

@@ -137,5 +137,6 @@ dmypy.json
 # Databases
 *.sqlite
 *.sqlite3
+db.sqlite3
 dataSources.xml
 dataSources.local.xml
