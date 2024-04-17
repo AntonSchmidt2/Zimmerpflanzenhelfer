@@ -7,29 +7,31 @@
 <body>
     <h1>Plant Watering Log</h1>
     <div>
-        <form action = "/waterlog/log-created/" method="POST">
+        <!-- Form for logging watering to an existing plant -->
+        <form action="/waterlog/log-created/" method="POST">
             {% csrf_token %}
-            <label for="plant-name">Choose your plant's name</label>
-            <select name = "plant-name" id = "plant-name" required>
+            <label for="plant-name">Choose your plant's name:</label>
+            <select name="plant_name" id="plant-name" required>
                 {% for plant in plant_list %}
-                <option value="{{plant}}">{{plant}}</option>
+                <option value="{{ plant.name }}">{{ plant.name }}</option>
                 {% endfor %}
             </select>
-            <label for="watered-at">Watered at</label>
-            <input type="date" id = "watered-at" name = "watered-at">
+            <label for="watered-at">Watered at:</label>
+            <input type="date" id="watered-at" name="watered_at">
             <input type="hidden" name="action" value="log_existing">
-            <input type="submit" class="btn02" value="submit log"/>
+            <input type="submit" class="btn02" value="Submit Log"/>
         </form>
     </div>
     <div>
-        <form action = "/waterlog/log-created/" method="POST">
+        <!-- Form for adding a new plant and logging its first watering -->
+        <form action="/waterlog/log-created/" method="POST">
             {% csrf_token %}
-            <label for="name">Name your new plant!</label>
-            <textarea rows = "1" id="name" name="name" placeholder="plant's name"></textarea>
-            <label for="new_watered">Watered at</label>
-            <input type="date" id = "new_watered" name = "new_watered">
+            <label for="name">Name your new plant:</label>
+            <textarea rows="1" id="name" name="plant_name" placeholder="Plant's name" required></textarea>
+            <label for="new_watered">Watered at:</label>
+            <input type="date" id="new_watered" name="watered_at">
             <input type="hidden" name="action" value="log_new">
-            <input type="submit" class="btn02" value="log new plant"/>
+            <input type="submit" class="btn02" value="Log New Plant"/>
         </form>
     </div>
 </body>
