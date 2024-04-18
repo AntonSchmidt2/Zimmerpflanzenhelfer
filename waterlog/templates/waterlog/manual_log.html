@@ -3,33 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Manual log</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: green; }
+        form { margin-bottom: 20px; }
+        label { display: block; margin: 10px 0 5px; }
+        input, select, textarea { width: 200px; margin-bottom: 10px; padding: 8px; }
+        input[type=submit] { background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        input[type=submit]:hover { background-color: #45a049; }
+        .navigation { background: #f0f0f0; padding: 10px 0; text-align: center; margin-bottom: 20px; }
+        .navigation a { text-decoration: none; color: #333; margin: 0 10px; }
+    </style>
 </head>
 <body>
     <h1>Plant Watering Log</h1>
+    <div class="navigation">
+        <a href="/">Home</a>
+        <a href="/waterlog/show_logs/">View Logs</a>
+    </div>
     <div>
-        <form action = "/waterlog/log-created/" method="POST">
+        <!-- Form for logging watering to an existing plant -->
+        <form action="/waterlog/log-created/" method="POST">
             {% csrf_token %}
-            <label for="plant-name">Choose your plant's name</label>
-            <select name = "plant-name" id = "plant-name" required>
+            <label for="plant-name">Choose your plant's name:</label>
+            <select name="plant_name" id="plant-name" required>
                 {% for plant in plant_list %}
-                <option value="{{plant}}">{{plant}}</option>
+                <option value="{{ plant.name }}">{{ plant.name }}</option>
                 {% endfor %}
             </select>
-            <label for="watered-at">Watered at</label>
-            <input type="date" id = "watered-at" name = "watered-at">
+            <label for="watered-at">Watered at:</label>
+            <input type="date" id="watered-at" name="watered_at">
             <input type="hidden" name="action" value="log_existing">
-            <input type="submit" class="btn02" value="submit log"/>
+            <input type="submit" class="btn02" value="Submit Log"/>
         </form>
     </div>
     <div>
-        <form action = "/waterlog/log-created/" method="POST">
+        <!-- Form for adding a new plant and logging its first watering -->
+        <form action="/waterlog/log-created/" method="POST">
             {% csrf_token %}
-            <label for="name">Name your new plant!</label>
-            <textarea rows = "1" id="name" name="name" placeholder="plant's name"></textarea>
-            <label for="new_watered">Watered at</label>
-            <input type="date" id = "new_watered" name = "new_watered">
+            <label for="name">Name your new plant:</label>
+            <textarea rows="1" id="name" name="plant_name" placeholder="Plant's name" required></textarea>
+            <label for="new_watered">Watered at:</label>
+            <input type="date" id="new_watered" name="watered_at">
             <input type="hidden" name="action" value="log_new">
-            <input type="submit" class="btn02" value="log new plant"/>
+            <input type="submit" class="btn02" value="Log New Plant"/>
         </form>
     </div>
 </body>
