@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f60b3888-2bf5-46e9-8e64-98dc6d783d52" name="Changes" comment="add redirect">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/waterlog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/waterlog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/waterlog/templates/waterlog/manual_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/waterlog/templates/waterlog/manual_log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/waterlog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/waterlog/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
